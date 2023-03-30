@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home page</title>
+  </head>
+  <body>
+    <h1>Array passed in from python</h1>
+    <ul>
+      {% for x in listOfStuff %}
+      <li>{{x}}</li>
+      {% endfor %}
+    </ul>
+
+    <h1>Array written in the index.html file</h1>
+    {% for x in range(10) %} {% if x % 2 == 1 %}
+    <p>{{x}}</p>
+    {% endif %} {% endfor %}
+    <!-- notice the "endif" and 
+      "endfor" for ending the if statement, 
+      then for loop
+
+      make sure there are no spaces between % and {} curly brackets (e.g. {% ... %})
+     -->
+
+    <h1>String variable passed in through Python</h1>
+    <p>{{content}}</p>
+  </body>
+</html>

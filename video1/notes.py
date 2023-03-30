@@ -43,6 +43,9 @@ from flask import redirect, url_for
 def admin():
     return redirect(url_for("home"))
 # home is name of function we want to run
+# if you want to pass the user function,
+# and need a parameter, you type it in as:
+        # redirect(url_for("home", name="whatever name you want to pass"))
 
 if __name__ == '__main__':
         app.run()
