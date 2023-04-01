@@ -11,3 +11,18 @@
 # they are designed as a quick way to access information and to pass things around our server
 
 # import session from flask
+
+#   session["user"] = user
+# all the session data we store is encrypted on the server
+# that means we need to define a secret key, which is how you encrypt and decrypt the data
+
+
+    # if "user" in session:
+    #     user = session["user"]
+# print session to see it in the terminal
+# if you close your browser, the session data will be deleted from the server
+# so if you want to get back to the user page, 
+# you'll have to log in again, which then create a new session
+
+    # session.pop("user", None)
+    # Tim does not know why None is there, but it just needs to be there
