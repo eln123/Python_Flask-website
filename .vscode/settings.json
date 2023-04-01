@@ -1,5 +1,7 @@
 {
     "cSpell.words": [
         "permenant"
-    ]
+    ],
+    "prettier.singleAttributePerLine": true,
+    "prettier.useTabs": false
 }
