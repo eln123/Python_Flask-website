@@ -1,9 +1,18 @@
 from flask import Flask, request, redirect, url_for, render_template, session
+from datetime import timedelta
+# we are using this, to set up the maximum amount of time our session can last for
 
 app = Flask(__name__)
 app.secret_key = "hello"
 # all the session data we store is encrypted on the server
 # that means we need to define a secret key, which is how you encrypt and decrypt the data
+
+app.permanent_session_lifetime = timedelta(days = 5)
+# now we are storing permenant session data for 5 days
+# you can also do minutes = 5, etc.
+# then go down and set session.permanent = True, so it will then last for that long, even when you close browser/window
+# by default, this is set to false
+
 
 @app.route('/')
 def home():
@@ -12,6 +21,7 @@ def home():
 @app.route("/login", methods=['POST', 'GET'])
 def login():
     if request.method == 'POST':
+        session.permanent = True
         user = request.form["nm"]
         session["user"] = user
         return redirect(url_for("user", user=user))

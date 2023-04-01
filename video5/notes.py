@@ -26,3 +26,16 @@
 
     # session.pop("user", None)
     # Tim does not know why None is there, but it just needs to be there
+
+
+# from datetime import timedelta
+# app.permanent_session_lifetime = timedelta(days = 5)
+# ...
+# def login():
+#     if request.method == 'POST':
+#         session.permanent = True
+# now we are storing permenant session data for 5 days
+# you can also do minutes = 5, etc.
+# then go down and set session.permanent = True, so it will then last for that long, even when you close browser/window
+# by default, this is set to false
+
